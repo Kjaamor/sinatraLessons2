@@ -10,6 +10,12 @@ get '/:name?' do |name|
     erb :index, :locals => {:name=>name}
 end
 
+get '/mathstest' do
+    if 1+1=2
+        "1 plus 1 equals two!"
+    end
+end
+
 post "/index" do
     get top_right_x do
         if params[:top-right]
