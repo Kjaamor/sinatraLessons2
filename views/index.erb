@@ -1,8 +1,34 @@
 <html>
     <body>
-        <h1 style="text-align:center;"> Hi,  <%= name %>. Welcome to the Tic-Tac-Toe server!</h1>
-        <br>
-        <br>
+        <h1 style="text-align:center;"> Hi, NAMEFUNCTIONREMOVED. Welcome to the Tic-Tac-Toe server!</h1>
+        <div style="margin:auto; width:30%; text-align: center;">
+            <p>Please provide a cell reference (1-9)</p>
+            <form action="/sinatra_me.rb">
+            Cell:
+                <input type="radio" id="1" name="cell_choice" value="Top-left">
+                <label for="1">1</label>
+                <input type="radio" id="2" name="cell_choice" value="Top-centre">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="cell_choice" value="Top-right">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="cell_choice" value="Centre-left">
+                <label for="4">4</label>
+                <input type="radio" id="5" name="cell_choice" value="Centre">
+                <label for="5">5</label>
+                <input type="radio" id="6" name="cell_choice" value="Centre-right">
+                <label for="6">6</label>
+                <input type="radio" id="7" name="cell_choice" value="Bottom-left">
+                <label for="7">7</label>
+                <input type="radio" id="8" name="cell_choice" value="Bottom-centre">
+                <label for="8">8</label>
+                <input type="radio" id="9" name="cell_choice" value="Bottom-right">
+                <label for="9">9</label>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <% if @cell_choice %>
+            <h2 style="text-align:center;">You have chosen <%= @cell_choice %>!<h2>
+        <% end %>
         <style>
         table, th, td {
             border: 1px solid black;
