@@ -1,10 +1,9 @@
 <html>
     <body>
         <h1 style="text-align:center;"> Hi, NAMEFUNCTIONREMOVED. Welcome to the Tic-Tac-Toe server!</h1>
-        <div style="margin:auto; width:30%; text-align: center;">
-            <p>Please provide a cell reference (1-9)</p>
-            <form action="/sinatra_me.rb">
-            Cell:
+        <div style="margin:auto; width:40%; text-align: center;">
+            <form action="/index">
+            Please choose a cell:
                 <input type="radio" id="1" name="cell_choice" value="Top-left">
                 <label for="1">1</label>
                 <input type="radio" id="2" name="cell_choice" value="Top-centre">
@@ -36,8 +35,8 @@
             font-size: 2em;
         }
         table {
-            height: 20em;
-            width: 20em;
+            height: 10em;
+            width: 10em;
             margin: auto;
         }
         th, td {
@@ -50,19 +49,55 @@
         </style>
         <table>
             <tr>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[0][0]" name="top-left"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[0][1]" name="top-center"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[0][2]" name="top-right"></form></td>
+                <% if @cell_choice == "Top-left" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
+                <% if @cell_choice == "Top-centre" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
+                <% if @cell_choice == "Top-right" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
             </tr>
             <tr>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[1][0]" name="center-left"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[1][1]" name="center"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[1][2]" name="center-right"></form></td>
+                <% if @cell_choice == "Centre-left" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
+                <% if @cell_choice == "Centre" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
+                <% if @cell_choice == "Centre-right" %>
+                    <td>X</td>
+                    <% else %>
+                    <td>-</td>
+                <% end %>
             </tr>
             <tr>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[2][0]" name="bottom-left"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[2][1]" name="bottom-center"></form></td>
-                <td><form action="/sinatra_me.rb" method="post"><input type="button" value="Click Here!" id="[2][2]" name="bottom-right"></form></td>
+            <% if @cell_choice == "Bottom-left" %>
+                <td>X</td>
+                <% else %>
+                <td>-</td>
+            <% end %>
+            <% if @cell_choice == "Bottom-centre" %>
+                <td>X</td>
+                <% else %>
+                <td>-</td>
+            <% end %>
+            <% if @cell_choice == "Bottom-right" %>
+                <td>X</td>
+                <% else %>
+                <td>-</td>
+            <% end %>
             </tr>
         </table>
     </body>
